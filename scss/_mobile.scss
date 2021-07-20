@@ -1,0 +1,107 @@
+@media screen and (max-width: 768px){
+  .hero{
+    height: calc(100vh - 95px);
+    background-position: center;
+    text-align: center;
+    h1{
+      font-size: 40px;
+      padding: 20px 0;
+    }
+  }
+
+  .carousel{
+    max-width: 100%;
+    margin: 70px 0;
+    svg{
+      margin: 0 10px;
+    }
+    svg:hover{
+      opacity: unset;
+    }
+    &-content{
+      
+      &-item{
+        width: calc(100vw - 140px);
+        img{
+          width: calc(100vw - 140px);
+        }
+        margin: 5px;
+      }
+    }
+  }
+ 
+  .search{
+    height: 60px;
+  }
+  .all-items{
+    margin: 20px 0;
+    max-width: unset;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    .item-container{
+      a{
+        img{
+          height: 120px;
+          width: 120px;
+        }
+      }
+    }
+  }
+  .filter{
+    margin: unset;
+    justify-content: center;
+    padding-bottom: none;
+  }
+
+  .button-container{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    span{
+      grid-column: span 2;
+      text-align: center;
+    }
+    button{
+      margin: auto;
+    }
+  }
+
+  .character-description{
+    &-text{
+      max-width: 80%;
+      margin-top: 30px;
+    }
+    flex-direction: column;
+    &-img{
+      display: flex;
+      justify-content: center;
+      img{
+        max-width: 90%;
+      }
+    }
+    
+  }
+
+  .comic-description{
+    &-text{
+      max-width: 80%;
+      margin-top: 30px;
+    }
+    flex-direction: column;
+    &-img{
+      display: flex;
+      justify-content: center;
+      img{
+        max-width: 90%;
+      }
+    }
+    
+  }
+
+  .loader-container{
+    margin: 0;
+  }
+
+}

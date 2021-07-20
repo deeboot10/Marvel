@@ -1,0 +1,29 @@
+.character-description{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(199, 199, 199);
+    border: 2px solid rgb(119, 119, 119);
+    border-radius: 20px;
+    padding: 10px 20px;
+  }
+  &-img{
+    margin: 40px;
+    img{
+      max-height: 500px;
+    }
+  }
+}
+
+.loader-container{
+  display: flex;
+  margin: 40px;
+  justify-content: center;
+}
+
+@import "mobile";
