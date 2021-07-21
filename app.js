@@ -28,8 +28,8 @@ if(window.innerWidth > 768){
 
 
 //my api info
-const comicsUrl = "http://gateway.marvel.com/v1/public/comics?limit=6&ts=188&apikey=6b0f6c9638b7d3ff95aaabc5fd7de77f&hash=dd6fc5f4a4328c39f2efb4ad248e3bc8";
-const charactersUrl = "http://gateway.marvel.com/v1/public/characters?limit=6&ts=188&apikey=6b0f6c9638b7d3ff95aaabc5fd7de77f&hash=dd6fc5f4a4328c39f2efb4ad248e3bc8";
+const comicsUrl = "https://gateway.marvel.com/v1/public/comics?limit=6&ts=188&apikey=6b0f6c9638b7d3ff95aaabc5fd7de77f&hash=dd6fc5f4a4328c39f2efb4ad248e3bc8";
+const charactersUrl = "https://gateway.marvel.com/v1/public/characters?limit=6&ts=188&apikey=6b0f6c9638b7d3ff95aaabc5fd7de77f&hash=dd6fc5f4a4328c39f2efb4ad248e3bc8";
 let charactersArray = [];
 let comicsArray = [];
 

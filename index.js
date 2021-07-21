@@ -1,5 +1,5 @@
 //loading carousel
-const url = "http://gateway.marvel.com/v1/public/comics?limit=10&ts=188&apikey=6b0f6c9638b7d3ff95aaabc5fd7de77f&hash=dd6fc5f4a4328c39f2efb4ad248e3bc8&orderBy=-modified";
+const url = "https://gateway.marvel.com/v1/public/comics?limit=10&ts=188&apikey=6b0f6c9638b7d3ff95aaabc5fd7de77f&hash=dd6fc5f4a4328c39f2efb4ad248e3bc8&orderBy=-modified";
 const carouselItem = document.querySelector(".carousel-content")
 carouselArr = [];
 const carousel = document.querySelector(".carousel-content");
