@@ -15,15 +15,11 @@ const lastButton = document.getElementById("last");
 hide(backButton);
 
 //url options
-let url = apiinfo.firstPartComics + apiinfo.lastPart;
 let offset = 0;
-let paginationProperty = ""; // &offset = offset
 let total;
 let isSearched = false;
 let searchQuery = "";
-let searchProperty = "";
 let filter = "focDate"; // diff
-let filterProperty = ""; // &orderBy = filter
 let allCharacters = []; // place to store fetched data
 
 
@@ -94,14 +90,19 @@ function hide(el){
 }
 function callApi(){
   allCharactersContainer.innerHTML = "";
+  
+  let params = {
+    orderBy: filter,
+    offset: offset
+  }
 
-  if(isSearched) searchProperty = "&titleStartsWith=" + searchQuery; // diff
-  else searchProperty = "";
-  paginationProperty = "&offset=" + offset;
-  filterProperty = "&orderBy=" + filter;
+  if(isSearched) params.titleStartsWith = searchQuery; // diff
+  else delete params.titleStartsWith;
+  
+  let url = apiinfo.firstPartComics + apiinfo.createParams(params);
 
 
-  axios.get(url + searchProperty + filterProperty + paginationProperty)
+  axios.get(url)
   .then(function (response) {
     allCharacters = response.data.data.results;
     loadAllChars(allCharacters);

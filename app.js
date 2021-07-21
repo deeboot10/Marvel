@@ -1,3 +1,5 @@
+import { apiinfo } from "./apiinfo.js";
+
 // dom elements
 const charactersLink = document.querySelector(".characters");
 const comicsLink = document.querySelector(".comics");
@@ -25,17 +27,15 @@ if(window.innerWidth > 768){
   }
 }
 
-
-
-//my api info
-const comicsUrl = "https://gateway.marvel.com/v1/public/comics?limit=6&ts=188&apikey=6b0f6c9638b7d3ff95aaabc5fd7de77f&hash=dd6fc5f4a4328c39f2efb4ad248e3bc8";
-const charactersUrl = "https://gateway.marvel.com/v1/public/characters?limit=6&ts=188&apikey=6b0f6c9638b7d3ff95aaabc5fd7de77f&hash=dd6fc5f4a4328c39f2efb4ad248e3bc8";
 let charactersArray = [];
 let comicsArray = [];
 
+let parameters = {
+  limit: 6
+}
 
 // Fetching 6 latest and most popular comics/characters
-axios.get(charactersUrl)
+axios.get(apiinfo.firstPartCharacters + apiinfo.createParams(parameters))
 .then(function (response) {
   charactersArray = response.data.data.results;
   loadChars(charactersArray);
@@ -44,7 +44,7 @@ axios.get(charactersUrl)
   // handle error
   console.log(error);
 });
-axios.get(comicsUrl)
+axios.get(apiinfo.firstPartComics + apiinfo.createParams(parameters))
 .then(function (response) {
   comicsArray = response.data.data.results;
   loadComics(comicsArray);

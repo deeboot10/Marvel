@@ -1,8 +1,13 @@
+import { apiinfo } from "./apiinfo.js";
+
 //loading carousel
-const url = "https://gateway.marvel.com/v1/public/comics?limit=10&ts=188&apikey=6b0f6c9638b7d3ff95aaabc5fd7de77f&hash=dd6fc5f4a4328c39f2efb4ad248e3bc8&orderBy=-modified";
-const carouselItem = document.querySelector(".carousel-content")
-carouselArr = [];
+let params = {
+  limit: 10,
+  orderBy: "-modified"
+}
+const url = apiinfo.firstPartComics + apiinfo.createParams(params);
 const carousel = document.querySelector(".carousel-content");
+let carouselArr = [];
 
 const scrollsize = window.innerWidth < 768 ? window.innerWidth - 130 : 980;
 scrollLeft.onclick = () => { carousel.scroll(carousel.scrollLeft - scrollsize,0);}
